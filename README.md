@@ -5,6 +5,8 @@ indentation test for 2024 school
 Поэтому рекомендуется начать именно с установки [библиотеки:](https://github.com/INMOST-DEV/INMOST-FEM)
 
 С этой целью можно воспользоваться руководством из репозитория inmost-fem или выполнить последовательно следующие шаги:
+1. Создаем и заходим в папку внутри которой будем собирать библиотеку
+2. Выполняем следующие команды в терминале
 
 ```console
 git clone https://github.com/INMOST-DEV/INMOST-FEM.git
@@ -25,4 +27,10 @@ cmake --build .
 cmake -DCMAKE_INSTALL_PREFIX=/home/student/libs/anifem++_install ..
 
 cmake --install .
+```
+Здесь нужно задать удобный вам путь к библиотеке и запомнить для последующего использования для сборки проекта.
+
+После установки скачайте файлы из репозитория и соберите с использованием ссылки на установленную библиотеку.
+```console
+cmake -Danifem++_ROOT=/home/student/libs/anifem++_install/
 ```
