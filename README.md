@@ -6,7 +6,7 @@ indentation test for 2024 school
 
 С этой целью можно воспользоваться руководством из репозитория inmost-fem или выполнить последовательно следующие шаги:
 
-'''console
+```console
 git clone https://github.com/INMOST-DEV/INMOST-FEM.git
 
 cd INMOST-FEM
@@ -25,4 +25,4 @@ cmake --build .
 cmake -DCMAKE_INSTALL_PREFIX=/home/student/libs/anifem++_install ..
 
 cmake --install .
-'''
+```
