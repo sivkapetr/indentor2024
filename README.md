@@ -32,5 +32,5 @@ cmake --install .
 
 После установки скачайте файлы из репозитория и соберите с использованием ссылки на установленную библиотеку.
 ```console
-cmake -Danifem++_ROOT=/home/student/libs/anifem++_install/
+cmake -Danifem++_ROOT=/home/student/libs/anifem++_install/ .
 ```
