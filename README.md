@@ -40,5 +40,9 @@ cmake -Danifem++_ROOT=/home/student/libs/anifem++_install/ .
 
 make
 
+python3 meshgen.py
+
 ./hyperelast
 ```
+
+Размеры сетки можно поменять в файле meshgen.py. А потенциал и параметры отталкивающей функции можно найти в файле nonlinelast.cpp.
