@@ -154,10 +154,10 @@ int main(int argc, char* argv[]){
 
     
     //Problem parameters
-    double H = 10.0e-3, dH = 0.1e-3, Hend = 8.0e-3; // Высота центра индентора - старт, шаг, конец
-    double alpha = 1e6;                             // Множитель отталкивающей функции
-    double alpha_mul = 1.05;                        // Итерационный множитель множителя
-    double r = 5.0e-3;                                // Радиус индентора
+    double H = 12.0e-3, dH = 0.05e-3, Hend = 9.0e-3; // Высота центра индентора - старт, шаг, конец
+    double alpha = 0.7e8;                             // Множитель отталкивающей функции
+    double alpha_mul = 1.01;                        // Итерационный множитель множителя
+    double r = 6.0e-3;                                // Радиус индентора
     double q = 0.01;                                // Параметр отталкивающей функции
 
     auto Potential = [](SymMtx3D<> E, unsigned char dif = 3){ // Функция потенциала
@@ -166,14 +166,14 @@ int main(int argc, char* argv[]){
         auto I3 = Mech::I3<>{dif, E};               // Третий инвариант
         auto J = Mech::J<>{dif, E};                 // Якобиан
 
-        double C1 = 4.702e3;                        // Параметры потенциала
-        double C2 = 0.47e3;
-        double C3 = 0.11e3;                         
+        double C1 = 3.4e5;                        // Параметры потенциала
+        double C2 = 0.4e5;
+        double C3 = 0.04e5;                         
         
         // Разные варианты потенциалов. Последний член отвечает за несжимаемость тела
         //auto W = C1*(I1 - 3) + C2*(I2 - 3) + C1*1000*(I3-2*log(sqrt(I3))-1); // Mooney-Rivlin
-        //auto W = C1*(I1 - 3)  + C1*1000*(I3-2*log(sqrt(I3))-1); // Neo-Hookean
-        auto W = C1*(I1 - 3) + C2*pow(I1 - 3, 2) + C3*pow(I1 - 3, 3)  + C1*1000*(I3-2*log(sqrt(I3))-1); // Yeoh
+        auto W = C1*(I1 - 3)  + C1*1000*(I3-2*log(sqrt(I3))-1); // Neo-Hookean
+        //auto W = C1*(I1 - 3) + C2*pow(I1 - 3, 2) + C3*pow(I1 - 3, 3)  + C1*1000*(I3-2*log(sqrt(I3))-1); // Yeoh
         return W;
     };
 
